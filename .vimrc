@@ -7,7 +7,7 @@ set laststatus=2
 
 let mapleader=","
 
-set timeoutlen=200
+set timeoutlen=400
 set nu
 filetype off
 
@@ -31,6 +31,7 @@ call vundle#begin()
 	Plugin 'ctrlpvim/ctrlp.vim'
 	Plugin 'OrangeT/vim-csharp'
 	Plugin 'bling/vim-airline'
+	Plugin 'chrisbra/vim-show-whitespace'
 call vundle#end()
 
 filetype plugin indent on
@@ -46,8 +47,8 @@ nnoremap <leader>bq :bd<cr>
 nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
 let g:OmniSharp_selector_ui = 'ctrlp'	
 
-nnoremap <Leader>ev :e ~/.vimrc<CR>
-nnoremap <Leader>sv :so ~/.vimrc<CR>
+nnoremap <leader>ev :e ~/.vimrc<CR>
+nnoremap <leader>sv :so ~/.vimrc<CR>
 
 nnoremap j gj
 nnoremap k gk
@@ -62,4 +63,6 @@ map <Leader>k <Plug>(easymotion-k)
 " python powerline_setup()
 " python del powerline_setup
 
-set guifont=monofur\ For\ Powerline:h13
+set guifont=Inconsolata\ For\ Powerline:h12
+
+set hls
