@@ -11,7 +11,12 @@ set timeoutlen=200
 set nu
 filetype off
 
-colo grb256
+if has('win32') || has('win64')
+	let &runtimepath.=',~/.vim'
+	set encoding=utf-8
+endif
+
+colo atom-dark
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
