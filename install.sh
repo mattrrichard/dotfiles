@@ -3,7 +3,7 @@
 cd `dirname "${BASH_SOURCE[0]}"`
 dir=`pwd`
 
-files=`ls -A | grep -v "install.sh" | grep -v ".git"`
+files=`ls -A | egrep -v 'install\.(sh|ps1)|\.git'`
 
 mkdir -p ~/dotfiles_backup
 
