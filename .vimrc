@@ -4,12 +4,13 @@ syntax on
 set ts=4
 set sw=4
 set laststatus=2
+set hidden
+set cursorline
 
 let mapleader=","
 
-set timeoutlen=400
+set timeoutlen=800
 set nu
-filetype off
 
 if has('win32') || has('win64')
 	let &runtimepath.=',~/.vim'
@@ -18,6 +19,7 @@ endif
 
 colo atom-dark
 
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 	Plugin 'gmarik/Vundle.vim'
@@ -31,8 +33,14 @@ call vundle#begin()
 	Plugin 'ctrlpvim/ctrlp.vim'
 	Plugin 'OrangeT/vim-csharp'
 	Plugin 'bling/vim-airline'
-	Plugin 'chrisbra/vim-show-whitespace'
+	Plugin 'chrisbra/vim-show-whitespace' " <leader>ws to show whitespace
+	Plugin 'scrooloose/nerdtree'
 call vundle#end()
+
+nnoremap <leader>p :CtrlP<CR>
+
+nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nc :NERDTree %<CR>
 
 filetype plugin indent on
 
@@ -44,11 +52,8 @@ nnoremap <leader>h :bp<cr>
 nnoremap <leader>l :bn<cr>
 nnoremap <leader>bq :bd<cr>
 
-nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
-let g:OmniSharp_selector_ui = 'ctrlp'	
-
-nnoremap <leader>ev :e ~/.vimrc<CR>
-nnoremap <leader>sv :so ~/.vimrc<CR>
+nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>sv :so $MYVIMRC<CR>
 
 nnoremap j gj
 nnoremap k gk
@@ -65,4 +70,18 @@ map <Leader>k <Plug>(easymotion-k)
 
 set guifont=Inconsolata\ For\ Powerline:h12
 
+let g:OmniSharp_selector_ui = 'ctrlp'	
+let g:syntastic_cs_checkers = ['code_checker', 'syntax', 'semantic', 'issues']
+nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
+nnoremap <leader>gi :OmniSharpFindImplementations<cr>
+nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
+nnoremap <leader>fu :OmniSharpFindUsages
+
+let g:OmniSharp_server_type = 'roslyn'
+
 set hls
+
+" clear most recent search with return in normal mode
+"nnoremap <silent> <cr> :let @/=""<cr>
+nnoremap <silent> <cr> :noh<cr>
+
