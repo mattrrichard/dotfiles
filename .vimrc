@@ -6,6 +6,7 @@ set sw=4
 set laststatus=2
 set hidden
 set cursorline
+set backspace=indent,eol,start
 
 let mapleader=","
 
@@ -71,11 +72,14 @@ map <Leader>k <Plug>(easymotion-k)
 set guifont=Inconsolata\ For\ Powerline:h12
 
 let g:OmniSharp_selector_ui = 'ctrlp'	
-let g:syntastic_cs_checkers = ['code_checker', 'syntax', 'semantic', 'issues']
+"let g:syntastic_cs_checkers = ['code_checker', 'syntax', 'semantic', 'issues']
+let g:syntastic_cs_checkers = ['code_checker']
 nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
 nnoremap <leader>gi :OmniSharpFindImplementations<cr>
 nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
 nnoremap <leader>fu :OmniSharpFindUsages
+
+autocmd InsertLeave *.cs SyntasticCheck
 
 let g:OmniSharp_server_type = 'roslyn'
 
