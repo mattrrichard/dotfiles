@@ -19,7 +19,11 @@ if has('win32') || has('win64')
 	set encoding=utf-8
 endif
 
-colo atom-dark
+colo atom-dark-256
+
+if !has('gui') 
+    set t_Co=256
+endif
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
