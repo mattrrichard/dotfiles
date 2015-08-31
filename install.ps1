@@ -9,8 +9,7 @@ if(!(Test-Path $backupdir)) {
     mkdir $backupdir | Out-Null
 }
 
-Get-ChildItem "$dir" | `
-Foreach-Object {
+Get-ChildItem "$dir" | Foreach-Object {
     $name = ([System.IO.Path]::GetFileNameWithoutExtension($_.FullName))
     if ( $name -ne "install" ) {
         if (Test-Path ~\$_) {
