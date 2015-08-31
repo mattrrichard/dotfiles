@@ -28,19 +28,19 @@ endif
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-	Plugin 'gmarik/Vundle.vim'
-	Plugin 'tpope/vim-fugitive'
-	Plugin 'tpope/vim-surround'
-	Plugin 'tpope/vim-repeat'
-	Plugin 'Lokaltog/vim-easymotion'
-	Plugin 'OmniSharp/omnisharp-vim'
-	Plugin 'tpope/vim-dispatch'
-	Plugin 'scrooloose/syntastic'
-	Plugin 'ctrlpvim/ctrlp.vim'
-	Plugin 'OrangeT/vim-csharp'
-	Plugin 'bling/vim-airline'
-	Plugin 'chrisbra/vim-show-whitespace' " <leader>ws to show whitespace
-	Plugin 'scrooloose/nerdtree'
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-repeat'
+    Plugin 'Lokaltog/vim-easymotion'
+    "Plugin 'OmniSharp/omnisharp-vim'
+    Plugin 'tpope/vim-dispatch'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'ctrlpvim/ctrlp.vim'
+    "Plugin 'OrangeT/vim-csharp'
+    Plugin 'bling/vim-airline'
+    Plugin 'chrisbra/vim-show-whitespace' " <leader>ws to show whitespace
+    Plugin 'scrooloose/nerdtree'
 call vundle#end()
 
 nnoremap <leader>p :CtrlP<CR>
