@@ -56,7 +56,7 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap <leader>t :enew<cr>
 nnoremap <leader>h :bp<cr>
 nnoremap <leader>l :bn<cr>
-nnoremap <leader>bq :bd<cr>
+nnoremap <leader>q :bp\|bd #<cr>
 
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :so $MYVIMRC<CR>
