@@ -77,16 +77,19 @@ map <Leader>k <Plug>(easymotion-k)
 set guifont=Inconsolata\ For\ Powerline:h12
 
 let g:OmniSharp_selector_ui = 'ctrlp'	
-"let g:syntastic_cs_checkers = ['code_checker', 'syntax', 'semantic', 'issues']
-let g:syntastic_cs_checkers = ['code_checker']
+
+let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+let g:OmniSharp_server_type = 'v1'
+
+" let g:syntastic_cs_checkers = ['code_checker']
+" let g:OmniSharp_server_type = 'roslyn'
+
 nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
 nnoremap <leader>gi :OmniSharpFindImplementations<cr>
 nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
 nnoremap <leader>fu :OmniSharpFindUsages
 
 autocmd InsertLeave *.cs SyntasticCheck
-
-let g:OmniSharp_server_type = 'roslyn'
 
 set hls
 
