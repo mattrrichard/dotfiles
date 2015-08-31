@@ -7,6 +7,7 @@ set laststatus=2
 set hidden
 set cursorline
 set backspace=indent,eol,start
+set expandtab
 
 let mapleader=","
 
