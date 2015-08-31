@@ -1,0 +1,2 @@
+
+nnoremap gi :vsc ReSharper.ReSharper_GotoImplementation<cr>
