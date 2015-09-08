@@ -102,4 +102,11 @@ set hls
 " clear most recent search with return in normal mode
 "nnoremap <silent> <cr> :let @/=""<cr>
 nnoremap <silent> <cr> :noh<cr>
+augroup SyntaxOverrides
+    au!
+    au BufRead,BufNewFile *.vb set filetype=vb
+    au BufRead,BufNewFile *.cls set filetype=vb
+    au BufRead,BufNewFile *.frm set filetype=vb
+    au BufRead,BufNewFile *.md set filetype=markdown
+augroup END
 
