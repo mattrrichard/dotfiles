@@ -92,7 +92,10 @@ nnoremap <leader>gi :OmniSharpFindImplementations<cr>
 nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
 nnoremap <leader>fu :OmniSharpFindUsages
 
-autocmd InsertLeave *.cs SyntasticCheck
+augroup CSharpSyntax
+    au!
+    au InsertLeave *.cs SyntasticCheck
+augroup END
 
 set hls
 
