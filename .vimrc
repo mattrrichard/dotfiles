@@ -103,6 +103,17 @@ set hls
 "nnoremap <silent> <cr> :let @/=""<cr>
 nnoremap <silent> <cr> :noh<cr>
 nnoremap <silent> * :let @/=expand('<cword>') \| set hlsearch <cr>
+
+function! s:DiffWithSaved()
+    let filetype=&ft
+    diffthis
+    vnew | r # | normal! 1Gdd
+    diffthis
+    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+
+com! DiffSaved call s:DiffWithSaved()
+
 augroup SyntaxOverrides
     au!
     au BufRead,BufNewFile *.vb set filetype=vb
