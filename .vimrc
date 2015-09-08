@@ -102,6 +102,7 @@ set hls
 " clear most recent search with return in normal mode
 "nnoremap <silent> <cr> :let @/=""<cr>
 nnoremap <silent> <cr> :noh<cr>
+nnoremap <silent> * :let @/=expand('<cword>') \| set hlsearch <cr>
 augroup SyntaxOverrides
     au!
     au BufRead,BufNewFile *.vb set filetype=vb
