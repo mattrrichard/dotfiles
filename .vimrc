@@ -19,10 +19,13 @@ if has('win32') || has('win64')
 	set encoding=utf-8
 endif
 
-colo atom-dark-256
 
 if !has('gui') 
     set t_Co=256
+    colo atom-dark-256
+    highlight CursorLine ctermfg=NONE
+else
+    colo atom-dark
 endif
 
 filetype off
