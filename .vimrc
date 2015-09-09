@@ -116,9 +116,7 @@ com! DiffSaved call s:DiffWithSaved()
 
 augroup SyntaxOverrides
     au!
-    au BufRead,BufNewFile *.vb set filetype=vb
-    au BufRead,BufNewFile *.cls set filetype=vb
-    au BufRead,BufNewFile *.frm set filetype=vb
-    au BufRead,BufNewFile *.md set filetype=markdown
+    au BufRead,BufNewFile *.vb,*.cls,*.frm setlocal filetype=vb
+    au BufRead,BufNewFile *.md setlocal filetype=markdown
 augroup END
 
