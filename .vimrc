@@ -102,7 +102,7 @@ set hls
 " clear most recent search with return in normal mode
 "nnoremap <silent> <cr> :let @/=""<cr>
 nnoremap <silent> <cr> :noh<cr>
-nnoremap <silent> * :let @/=expand('<cword>') \| set hlsearch <cr>
+nnoremap <silent> * :let @/=expand('<cword>') \| exe "normal mz" \| set hlsearch <cr>
 
 function! s:DiffWithSaved()
     let filetype=&ft
