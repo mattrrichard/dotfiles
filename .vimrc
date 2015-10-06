@@ -8,11 +8,11 @@ set hidden
 set cursorline
 set backspace=indent,eol,start
 set expandtab
+set nu
 
 let mapleader=","
 
 set timeoutlen=800
-set nu
 
 if has('win32') || has('win64')
 	let &runtimepath.=',~/.vim'
@@ -72,10 +72,6 @@ nnoremap <S-Space> <PageUp>
 
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
 
 set guifont=Inconsolata\ For\ Powerline:h12
 
