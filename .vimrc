@@ -44,6 +44,7 @@ call vundle#begin()
     Plugin 'bling/vim-airline'
     Plugin 'chrisbra/vim-show-whitespace' " <leader>ws to show whitespace
     Plugin 'scrooloose/nerdtree'
+    Plugin 'lambdatoast/elm.vim'
 call vundle#end()
 
 nnoremap <leader>p :CtrlP<CR>
