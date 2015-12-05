@@ -22,11 +22,12 @@ endif
 
 if !has('gui') 
     set t_Co=256
-    colo atom-dark-256
-    highlight CursorLine ctermfg=NONE
+    " colo atom-dark-256
+    " highlight CursorLine ctermfg=NONE
 else
-    colo atom-dark
+    " colo atom-dark
 endif
+colorscheme materialbox
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -35,16 +36,21 @@ call vundle#begin()
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-repeat'
+    Plugin 'tpope/vim-commentary'
     Plugin 'Lokaltog/vim-easymotion'
-    "Plugin 'OmniSharp/omnisharp-vim'
     Plugin 'tpope/vim-dispatch'
     Plugin 'scrooloose/syntastic'
     Plugin 'ctrlpvim/ctrlp.vim'
-    "Plugin 'OrangeT/vim-csharp'
+    " Plugin 'OmniSharp/omnisharp-vim'
+    " Plugin 'OrangeT/vim-csharp'
     Plugin 'bling/vim-airline'
     Plugin 'chrisbra/vim-show-whitespace' " <leader>ws to show whitespace
     Plugin 'scrooloose/nerdtree'
-    Plugin 'lambdatoast/elm.vim'
+    Plugin 'ElmCast/elm-vim'
+    Plugin 'morhetz/gruvbox'
+    Plugin 'mkarmona/materialbox'
+    Plugin 'jdkanani/vim-material-theme'
+
 call vundle#end()
 
 nnoremap <leader>p :CtrlP<CR>
@@ -74,20 +80,19 @@ nnoremap <S-Space> <PageUp>
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
-set guifont=Inconsolata\ For\ Powerline:h12
+set guifont=Fira\ Mono\ For\ Powerline:h12
 
 let g:OmniSharp_selector_ui = 'ctrlp'	
-
 let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
 let g:OmniSharp_server_type = 'v1'
 
 " let g:syntastic_cs_checkers = ['code_checker']
 " let g:OmniSharp_server_type = 'roslyn'
 
-nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
-nnoremap <leader>gi :OmniSharpFindImplementations<cr>
-nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
-nnoremap <leader>fu :OmniSharpFindUsages
+" nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
+" nnoremap <leader>gi :OmniSharpFindImplementations<cr>
+" nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
+" nnoremap <leader>fu :OmniSharpFindUsages
 
 augroup CSharpSyntax
     au!
