@@ -106,6 +106,11 @@ set hls
 nnoremap <silent> <cr> :noh<cr>
 nnoremap <silent> * :let @/=expand('<cword>') \| exe "normal mS" \| set hlsearch <cr>
 
+
+nnoremap <leader>O m`O<Esc>``
+nnoremap <leader>o m`o<Esc>``
+
+
 function! s:DiffWithSaved()
     let filetype=&ft
     diffthis
