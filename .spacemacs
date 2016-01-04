@@ -23,20 +23,24 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     haskell
      auto-completion
      ;; better-defaults
      emacs-lisp
      git
+     version-control
      markdown
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      ;; spell-checking
+
      syntax-checking
-     ;; version-control
+
      (elm :variables
           elm-indent-offset 4)
+
      osx
      themes-megapack
      )
