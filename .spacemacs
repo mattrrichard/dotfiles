@@ -81,7 +81,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner 'random
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
@@ -101,11 +101,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Mono for Powerline"
-                               :size 13
-                               :weight normal
+   dotspacemacs-default-font '("Fira Mono"
+                               :size 12
+                               :weight regular
                                :width normal
-                               :powerline-scale 1.2)
+                               :powerline-scale 1.8)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -210,11 +210,12 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (global-company-mode)
+  ;;(global-company-mode)
   (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
   (add-to-list 'company-backends 'company-elm)
   (add-hook 'elm-mode-hook (lambda ()
                              (setq default-directory (elm--find-dependency-file-path))))
+  (setq powerline-default-separator 'slant)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
