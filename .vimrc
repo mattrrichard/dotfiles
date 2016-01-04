@@ -130,3 +130,6 @@ augroup SyntaxOverrides
     au BufRead,BufNewFile *.md setlocal filetype=markdown
 augroup END
 
+nnoremap <space>fs :w<cr>
+
+
