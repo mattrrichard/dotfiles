@@ -110,9 +110,12 @@ nnoremap <silent> <cr> :noh<cr>
 nnoremap <silent> * :let @/=expand('<cword>') \| exe "normal mS" \| set hlsearch <cr>
 
 
+" Insert blank line above/below current line
 nnoremap <leader>O m`O<Esc>``
 nnoremap <leader>o m`o<Esc>``
 
+" Set cwd to directory of the current file
+nnoremap <leader>cd :cd %:h<cr>
 
 function! s:DiffWithSaved()
     let filetype=&ft
