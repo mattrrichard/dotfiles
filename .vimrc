@@ -20,15 +20,6 @@ if has('win32') || has('win64')
 endif
 
 
-if !has('gui') 
-    set t_Co=256
-    " colo atom-dark-256
-    " highlight CursorLine ctermfg=NONE
-else
-    " colo atom-dark
-endif
-colorscheme materialbox
-
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -53,10 +44,22 @@ call vundle#begin()
 
 call vundle#end()
 
+if !has('gui_running')
+    set t_Co=256
+    colo atom-dark-256
+    highlight CursorLine ctermfg=NONE
+else
+    " colo atom-dark
+    " colorscheme materialbox
+    set background=dark
+    colorscheme material-theme
+endif
+
+
 nnoremap <leader>p :CtrlP<CR>
 
 nnoremap <leader>nt :NERDTreeToggle<CR>
-nnoremap <leader>nc :NERDTree %<CR>
+nnoremap <leader>nc :NERDTree %:h<CR>
 
 filetype plugin indent on
 
