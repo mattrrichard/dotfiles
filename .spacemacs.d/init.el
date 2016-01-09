@@ -28,6 +28,7 @@ values."
      ;; better-defaults
      emacs-lisp
      git
+     github
      version-control
      markdown
      org
@@ -48,7 +49,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     hlinum
+    )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
    '(
@@ -210,12 +214,17 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  ;;(global-company-mode)
+  (setq powerline-default-separator 'slant)
   (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
-  (add-to-list 'company-backends 'company-elm)
+  ;; (add-to-list 'company-backends 'company-elm)
+  (add-to-list 'spacemacs-indent-sensitive-modes 'elm-mode)
   (add-hook 'elm-mode-hook (lambda ()
                              (setq default-directory (elm--find-dependency-file-path))))
-  (setq powerline-default-separator 'slant)
+
+
+  (require 'hlinum)
+  (hlinum-activate)
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
