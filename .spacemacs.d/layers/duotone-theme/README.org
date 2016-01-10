@@ -1,0 +1,21 @@
+#+TITLE: duotone-theme layer
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../css/readtheorg.css" />
+
+#+CAPTION: logo
+
+# The maximum height of the logo should be 200 pixels.
+
+* Table of Contents                                        :TOC_4_org:noexport:
+ - [[Description][Description]]
+ - [[Install][Install]]
+
+* Description
+This layer adds the duotone theme which is a port of the [[https://github.com/simurai/duotone-dark-syntax][DuoTone dark theme for Atom]] 
+
+* Install
+To use this contribution add it to your =~/.spacemacs=
+
+#+begin_src emacs-lisp
+  (setq-default dotspacemacs-configuration-layers '(duotone-theme))
+#+end_src
+
