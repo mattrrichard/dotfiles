@@ -1,2 +1,5 @@
 .vim/bundle/
-.elc
+.vim/
+
+# emacs compiled lisp
+*.elc
