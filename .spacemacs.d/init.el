@@ -228,8 +228,11 @@ layers configuration. You are free to put any user code."
                              (setq default-directory (elm--find-dependency-file-path))))
 
 
-  ;; (require 'hlinum)
-  ;; (hlinum-activate)
+  (add-hook 'linum-mode-hook
+            (lambda ()
+              (progn (
+                      (require 'hlinum)
+                      (hlinum-activate)))))
 
 )
 
