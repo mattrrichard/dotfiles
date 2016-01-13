@@ -1,2 +1,4 @@
-
 nnoremap gi :vsc ReSharper.ReSharper_GotoImplementation<cr>
+
+nmap <space>w <c-w>
+nnoremap <space>fs :w<cr>
