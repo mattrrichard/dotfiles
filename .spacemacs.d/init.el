@@ -227,13 +227,10 @@ layers configuration. You are free to put any user code."
   (add-hook 'elm-mode-hook (lambda ()
                              (setq default-directory (elm--find-dependency-file-path))))
 
-
   (add-hook 'linum-mode-hook
             (lambda ()
-              (progn (
-                      (require 'hlinum)
-                      (hlinum-activate)))))
-
+              (progn (require 'hlinum)
+                      (hlinum-activate))))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
