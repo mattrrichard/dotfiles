@@ -1,4 +1,6 @@
 nnoremap gi :vsc ReSharper.ReSharper_GotoImplementation<cr>
-
+inoremap fd <esc>
 nmap <space>w <c-w>
+nnoremap <c-w>H :vsc Window.MovetoPreviousTabGroup<CR>
+nnoremap <c-w>L :vsc Window.MovetoNextTabGroup<CR>
 nnoremap <space>fs :w<cr>
