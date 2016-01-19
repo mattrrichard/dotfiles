@@ -14,9 +14,14 @@ let mapleader=","
 
 set timeoutlen=800
 
-if has('win32') || has('win64')
-	let &runtimepath.=',~/.vim'
-	set encoding=utf-8
+if has('win32') || has('win64') || has('win32unix')
+    let &runtimepath.=',~/.vim'
+    set encoding=utf-8
+
+    if !has('gui_running')
+        set shell=/usr/bin/bash
+    endif
+
 endif
 
 
@@ -32,8 +37,6 @@ call vundle#begin()
     Plugin 'tpope/vim-dispatch'
     Plugin 'scrooloose/syntastic'
     Plugin 'ctrlpvim/ctrlp.vim'
-    " Plugin 'OmniSharp/omnisharp-vim'
-    " Plugin 'OrangeT/vim-csharp'
     Plugin 'bling/vim-airline'
     Plugin 'chrisbra/vim-show-whitespace' " <leader>ws to show whitespace
     Plugin 'scrooloose/nerdtree'
@@ -77,25 +80,10 @@ nnoremap <leader>sv :so $MYVIMRC<CR>
 nnoremap j gj
 nnoremap k gk
 
-nnoremap <space> <PageDown>
-nnoremap <S-Space> <PageUp>
-
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 set guifont=Fira\ Mono\ For\ Powerline:h12
-
-let g:OmniSharp_selector_ui = 'ctrlp'	
-let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
-let g:OmniSharp_server_type = 'v1'
-
-" let g:syntastic_cs_checkers = ['code_checker']
-" let g:OmniSharp_server_type = 'roslyn'
-
-" nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
-" nnoremap <leader>gi :OmniSharpFindImplementations<cr>
-" nnoremap <leader><space> :OmniSharpGetCodeActions<cr>
-" nnoremap <leader>fu :OmniSharpFindUsages
 
 augroup CSharpSyntax
     au!
@@ -134,5 +122,7 @@ augroup SyntaxOverrides
 augroup END
 
 nnoremap <space>fs :w<cr>
+inoremap fd <Esc>
+nmap <space>w <c-w>
 
 
