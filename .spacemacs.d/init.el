@@ -23,7 +23,8 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     haskell
+     (haskell :variables
+              haskell-process-type 'stack-ghci)
      auto-completion
      ;; better-defaults
      emacs-lisp
@@ -231,6 +232,11 @@ layers configuration. You are free to put any user code."
             (lambda ()
               (progn (require 'hlinum)
                       (hlinum-activate))))
+
+  (let ((stack-path (cond ((member system-type '(darwin gnu/linux)) "~/.local/bin")
+                          ((eq system-type 'windows-nt) "~/AppData/Roaming/local/bin"))))
+
+       (setq exec-path (append exec-path stack-path)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
