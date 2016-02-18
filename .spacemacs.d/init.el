@@ -40,8 +40,8 @@ values."
 
      syntax-checking
 
-     (elm :variables
-          elm-indent-offset 4)
+     elm
+          ;;elm-indent-offset 4)
 
      themes-megapack
      duotone-theme
