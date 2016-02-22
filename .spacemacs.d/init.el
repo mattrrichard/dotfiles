@@ -1,6 +1,4 @@
 ;; -*- mode: emacs-lisp -*-
-;; Thiso
-;; It must be stored in your home directory.
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
@@ -222,22 +220,41 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (setq powerline-default-separator 'slant)
+
+  (add-hook 'linum-mode-hook 'activate-hilinum-mode)
+
+  (add-to-list 'exec-path (dotspacemacs/get-local-bin-path-for-os))
+
+  (dotspacemacs/do-elm-config)
+)
+
+(defun dotspacemacs/get-local-bin-path-for-os ()
+  "Get the 'local bin' path for the current os.
+   Used specifically for haskell stack,
+   but I dunno other stuff might go there too."
+
+  (case  system-type
+    ((darwin gnu/linux) "~/.local/bin")
+    (windows-nt "~/AppData/Roaming/local/bin")
+    )
+  )
+
+(defun activate-hilinum-mode ()
+  "Activate current line number highlighting"
+  (progn (require 'hlinum)
+         (hlinum-activate)))
+
+
+(defun dotspacemacs/do-elm-config ()
+
   (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
-  ;; (add-to-list 'company-backends 'company-elm)
+
   (add-to-list 'spacemacs-indent-sensitive-modes 'elm-mode)
+
   (add-hook 'elm-mode-hook (lambda ()
                              (setq default-directory (elm--find-dependency-file-path))))
+  )
 
-  (add-hook 'linum-mode-hook
-            (lambda ()
-              (progn (require 'hlinum)
-                      (hlinum-activate))))
-
-  (let ((stack-path (cond ((member system-type '(darwin gnu/linux)) "~/.local/bin")
-                          ((eq system-type 'windows-nt) "~/AppData/Roaming/local/bin"))))
-
-       (setq exec-path (append exec-path stack-path)))
-)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
