@@ -43,6 +43,7 @@ values."
 
      themes-megapack
      duotone-theme
+     visual-basic
 
      ,@(when (eq system-type 'darwin)
          '(osx)
