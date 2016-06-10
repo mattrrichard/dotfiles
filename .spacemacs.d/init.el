@@ -249,12 +249,12 @@ layers configuration. You are free to put any user code."
 
 (defun dotspacemacs/do-elm-config ()
 
-  (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
+  ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
 
-  (add-to-list 'spacemacs-indent-sensitive-modes 'elm-mode)
+  ;; (add-to-list 'spacemacs-indent-sensitive-modes 'elm-mode)
 
-  (add-hook 'elm-mode-hook (lambda ()
-                             (setq default-directory (elm--find-dependency-file-path))))
+  ;; (add-hook 'elm-mode-hook (lambda ()
+  ;;                            (setq default-directory (elm--find-dependency-file-path))))
   )
 
 
