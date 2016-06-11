@@ -219,16 +219,33 @@ user code."
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
- This function is called at the very end of Spacemacs initialization after
+This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (setq powerline-default-separator 'slant)
+
+  (setq powerline-default-separator 'slant
+        projectile-enable-caching 't)
 
   (add-hook 'linum-mode-hook 'activate-hilinum-mode)
 
   (add-to-list 'exec-path (dotspacemacs/get-local-bin-path-for-os))
 
   (dotspacemacs/do-elm-config)
+
+  (if (eq system-type 'windows-nt)
+      (dotspacemacs/do-win32-config))
 )
+
+(defun dotspacemacs/do-win32-config ()
+  "Windows-specific config"
+
+  ;; indexing either takes a _really_ long time or just plain hangs when using 'alien mode
+  (setq projectile-indexing-method 'native)
+
+  ;; make sure the msys utilities are on the exec path (and before system32)
+  ;; this ensures that, for example, the gnu 'find' executable is used instead of w32 find.exe
+  (add-to-list 'exec-path "c:/Program Files/Git/usr/bin/")
+
+  )
 
 (defun dotspacemacs/get-local-bin-path-for-os ()
   "Get the 'local bin' path for the current os.
