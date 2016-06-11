@@ -252,7 +252,7 @@ layers configuration. You are free to put any user code."
    Used specifically for haskell stack,
    but I dunno other stuff might go there too."
 
-  (case  system-type
+  (case system-type
     ((darwin gnu/linux) "~/.local/bin")
     (windows-nt "~/AppData/Roaming/local/bin")
     )
