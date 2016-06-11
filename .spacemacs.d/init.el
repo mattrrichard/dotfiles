@@ -243,8 +243,10 @@ layers configuration. You are free to put any user code."
 
   ;; make sure the msys utilities are on the exec path (and before system32)
   ;; this ensures that, for example, the gnu 'find' executable is used instead of w32 find.exe
-  (add-to-list 'exec-path "c:/Program Files/Git/usr/bin/")
-
+  (let ((msys-paths '("c:/Program Files/Git/usr/bin/"
+                      "c:/Program Files/Git/mingw64/bin/"
+                      "c:/Program Files/Git/bin/")))
+    (setq exec-path (nconc msys-paths exec-path)))
   )
 
 (defun dotspacemacs/get-local-bin-path-for-os ()
