@@ -22,7 +22,8 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      (haskell :variables
-              haskell-process-type 'stack-ghci)
+              haskell-process-type 'stack-ghci
+              haskell-completion-backend 'intero)
      auto-completion
      ;; better-defaults
      emacs-lisp
