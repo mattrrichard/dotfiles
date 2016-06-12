@@ -7,6 +7,6 @@
 (defun visual-basic/init-visual-basic-mode()
   (use-package visual-basic-mode
     :defer t
-    :mode ("\\.bas\\'\\|\\.frm\\'\\|\\.cls\\'" . visual-basic-mode)
+    :mode ("\\.bas\\'\\|\\.frm\\'\\|\\.cls\\'\\|\\.tm\\'" . visual-basic-mode)
     )
   )
