@@ -25,6 +25,7 @@ values."
               haskell-process-type 'stack-ghci
               haskell-completion-backend 'intero)
      auto-completion
+     elixir
      ;; better-defaults
      emacs-lisp
      clojure
