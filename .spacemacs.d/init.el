@@ -269,7 +269,7 @@ layers configuration. You are free to put any user code."
 
 (defun dotspacemacs/do-elm-config ()
 
-  ;; (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
+  (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
 
   ;; (add-to-list 'spacemacs-indent-sensitive-modes 'elm-mode)
 
