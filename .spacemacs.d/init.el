@@ -21,6 +21,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     scala
      (haskell :variables
               haskell-process-type 'stack-ghci
               haskell-completion-backend 'intero)
@@ -38,8 +39,11 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      ;; spell-checking
+     javascript
 
      syntax-checking
+
+     latex
 
      elm
           ;;elm-indent-offset 4)
