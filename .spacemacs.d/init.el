@@ -16,6 +16,9 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    `(
+     windows-scripts
+     html
+     sql
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -50,10 +53,11 @@ values."
 
      elm
           ;;elm-indent-offset 4)
-
+     fsharp
      themes-megapack
      duotone-theme
      visual-basic
+     sql
 
      ,@(when (eq system-type 'darwin)
          '(osx)
