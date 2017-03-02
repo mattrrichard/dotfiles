@@ -8,8 +8,8 @@
   "Narrow to Function"
   (interactive)
   (save-excursion
-    (let ((beg (re-search-backward "^Function")))
-      (re-search-forward "End Function")
+    (let ((beg (re-search-backward "^Function\\|^Sub")))
+      (re-search-forward "^End Function\\|^End Sub")
       (end-of-line)
       (narrow-to-region beg (point)))))
 
@@ -18,8 +18,7 @@
     :defer t
     :mode ("\\.bas\\'\\|\\.frm\\'\\|\\.cls\\'\\|\\.tm\\'" . visual-basic-mode)
     :config (progn
-              (spacemacs/set-leader-keys-for-major-mode 'visualbasic-mode
-                "nf" 'visual-basic-narrow-to-function)
+              (spacemacs/declare-prefix-for-mode 'visual-basic-mode "mn" "narrow")
 
-              (spacemacs/declare-prefix-for-mode 'visual-basic-mode "mn" "narrow"))))
-
+              (spacemacs/set-leader-keys-for-major-mode 'visual-basic-mode
+                "nf" 'visual-basic-narrow-to-function))))
