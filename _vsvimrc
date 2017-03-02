@@ -5,4 +5,10 @@ nnoremap <c-w>H :vsc Window.MovetoPreviousTabGroup<CR>
 nnoremap <c-w>L :vsc Window.MovetoNextTabGroup<CR>
 nnoremap <space>fs :w<cr>
 nnoremap ge :vsc ReSharper.ReSharper_GotoNextErrorInSolution<cr>
-set timeoutlen=100
+set timeoutlen=300
+
+vnoremap ,sr :vsc EditorContextMenus.CodeWindow.ExecuteInInteractive<CR>
+nnoremap ,sr :vsc EditorContextMenus.CodeWindow.ExecuteInInteractive<CR>
+nmap ,sb Hmz``ggV``G,sr<Esc>``'zzt``
+
+nnoremap Y y$
