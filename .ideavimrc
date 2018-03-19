@@ -1,0 +1,34 @@
+set surround
+
+set timeoutlen=300
+
+nnoremap <space>fs :w<CR>
+
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gf :action FindUsages<CR>
+
+nnoremap <space>en :action GotoNextError<CR>
+nnoremap <space>ep :action GotoPreviousError<CR>
+
+nnoremap <space>ws :action SplitHorizontally<CR>
+nnoremap <space>wv :action SplitVertically<CR>
+nnoremap <space>w<space> :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <space>wd :action VimWindowClose<CR>
+
+nnoremap <space>bd :q<CR>
+nnoremap <space>bD :q!<CR>
+
+nnoremap <space>l :action NextTab<CR>
+nnoremap <space>h :action PreviousTab<CR>
+
+nnoremap <space>wh <c-w>h
+nnoremap <space>wj <c-w>j
+nnoremap <space>wk <c-w>k
+nnoremap <space>wl <c-w>l
+
+nnoremap <c-h> :action Back<CR>
+nnoremap <c-l> :action Forward<CR>
+
+inoremap kj <esc>
+
+nnoremap <silent> <space>rr :action Refactorings.QuickListPopupAction<CR>
